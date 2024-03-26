@@ -61,8 +61,7 @@ const register = async () => {
 const login = async () => {
     let result = await userLoginService(registerData.value);
 
-    ElMessage.success(result.data);
-    // ElMessage.success(result.msg ? result.msg : '登陆成功');
+    ElMessage.success(result.msg ? result.msg : '登陆成功');
     //把token存到pinia中
     tokenStore.setToken(result.data);
 
