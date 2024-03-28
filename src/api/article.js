@@ -21,24 +21,30 @@ export const updateCategoryService = (categoryModel) => {
 }
 
 //删除文章分类 queryString格式，所以要把路径进行改变
-export const deleteCategoryService =(id)=>{
+export const deleteCategoryService = (id) => {
     // alert('queryString格式，所以要把路径进行改变id:='+id);
-    return request.delete('/category?id='+id)
+    return request.delete('/category?id=' + id)
 }
 
 //文章列表(条件分页) 请求参数格式：queryString
-export const articleListService =(params)=>{
-    return request.get('/article',{params:params})
+export const articleListService = (params) => {
+    return request.get('/article', { params: params })
 }
 
 //新增文章
+export const addArticaleService = (articleModel) => {
+    return request.post('/article', articleModel)
+}
 
-//文章列表(条件分页)
+//更新文章
+export const updateArticleService = (articleModel) => {
+    return request.put('/article', articleModel)
+}
+
+//删除文章
+export const deleteArticleService = (id) => {
+    return request.delete('article?id=' + id)
+}
 
 //获取文章详情
 
-//更新文章
-
-//删除文章
-
-//

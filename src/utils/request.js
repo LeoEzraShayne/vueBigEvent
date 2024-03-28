@@ -12,6 +12,7 @@ import router from '@/router';
 const baseURL ='/api'
 const instance = axios.create({baseURL})
 
+
 //添加响应拦截器
 instance.interceptors.response.use(
     result=>{
@@ -44,6 +45,7 @@ instance.interceptors.request.use(
         //如果token存在就赋值
         if (tokenStore.token) {
             config.headers.Authorization = tokenStore.token
+            console.log("interceptors-token="+tokenStore.token)
         }
         return config;
     },
